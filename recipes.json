@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Grilled Cheese Sandwich",
+    "ingredients": ["bread", "cheese", "butter"],
+    "url": "https://example.com/grilled-cheese"
+  },
+  {
+    "title": "Egg Fried Rice",
+    "ingredients": ["rice", "egg", "soy sauce", "green onion"],
+    "url": "https://example.com/egg-fried-rice"
+  },
+  {
+    "title": "Tomato Soup",
+    "ingredients": ["tomato", "onion", "garlic", "olive oil"],
+    "url": "https://example.com/tomato-soup"
+  }
+]

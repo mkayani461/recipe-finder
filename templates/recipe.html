@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{{ recipe.strMeal }}</title>
+</head>
+<body>
+  <h1>{{ recipe.strMeal }}</h1>
+  <img src="{{ recipe.strMealThumb }}" width="300"><br><br>
+
+  <h3>Ingredients:</h3>
+  <ul>
+    {% for i in range(1, 21) %}
+      {% set ingredient = recipe['strIngredient' + i|string] %}
+      {% set measure = recipe['strMeasure' + i|string] %}
+      {% if ingredient and ingredient.strip() %}
+        <li>{{ measure }} {{ ingredient }}</li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+
+  <h3>Instructions:</h3>
+  <p>{{ recipe.strInstructions }}</p>
+
+  <a href="/">← Back to search</a>
+</body>
+</html>
+

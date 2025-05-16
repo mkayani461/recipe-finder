@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Recipe Finder</title>
+</head>
+<body>
+  <h1>Ingredient-Based Recipe Finder</h1>
+
+  <form action="/search" method="get">
+    <input type="text" name="ingredients" placeholder="e.g. chicken, rice" size="50">
+    <button type="submit">Search</button>
+  </form>
+
+  {% if recipes %}
+    <h2>Results:</h2>
+    <ul>
+      {% for meal in recipes %}
+        <li>
+          <img src="{{ meal.strMealThumb }}" width="100"><br>
+          <strong>{{ meal.strMeal }}</strong><br>
+          <a href="/recipe/{{ meal.idMeal }}">View Full Recipe</a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+</body>
+</html>
+
