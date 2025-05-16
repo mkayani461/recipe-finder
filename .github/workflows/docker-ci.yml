@@ -1,0 +1,30 @@
+name: CI - Build and Push Docker Image
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v3
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.mkayani461 }}
+          password: ${{ secrets.C10udTr@in12! }}
+
+      - name: Build and tag Docker image
+        run: |
+          docker build -t yourdockerhubusername/recipe-finder:v1 .
+          docker tag yourdockerhubusername/recipe-finder:v1 yourdockerhubusername/recipe-finder:latest
+
+      - name: Push Docker image to Docker Hub
+        run: |
+          docker push yourdockerhubusername/recipe-finder:v1
+          docker push yourdockerhubusername/recipe-finder:latest
+
