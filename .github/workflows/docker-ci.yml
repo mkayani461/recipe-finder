@@ -20,11 +20,11 @@ jobs:
 
       - name: Build and tag Docker image
         run: |
-          docker build -t yourdockerhubusername/recipe-finder:v1 .
-          docker tag yourdockerhubusername/recipe-finder:v1 yourdockerhubusername/recipe-finder:latest
+          docker build -t mkayani461/recipe-finder:v1 .
+          docker tag mkayani461/recipe-finder:v1 yourdockerhubusername/recipe-finder:latest
 
       - name: Push Docker image to Docker Hub
         run: |
-          docker push yourdockerhubusername/recipe-finder:v1
-          docker push yourdockerhubusername/recipe-finder:latest
+          docker push mkayani461/recipe-finder:v1
+          docker push mkayani461/recipe-finder:latest
 
